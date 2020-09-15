@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Comfortaa:wght@600&family=Parisienne&family=Righteous&display=swap');
+
+@font-face{
+    font-family: "icon";
+    src: url("fonts/Byom-Icons-Trial.ttf");
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+:root{
+    --fontP:'Cinzel', serif;
+    --fontS:'Comfortaa',cursive;
+    --fontT:'Parisienne',cursive;
+    --fontF:'Righteous',cursive;
+    --animationSpin: spin 2s linear 0s infinite;
+}
+/* Generales */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.icon{
+    font-family: "icon";
+}
+
+/* Cabezera */
+header{
+    font-family: var(--fontT);
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding:12px 0;
+}
+
+header h1{
+
+    transition: all 300ms;
+    animation: animate__backInLeft 2s linear;
+}
+nav{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(226, 226, 226, .6);
+    box-shadow: 0 1px 3px black;
+    z-index: 1;
+}
+nav>a{
+    transition: all 300ms;
+}
+nav>a>img{
+    display: none;
+    margin-right: 5px;
+    vertical-align: middle;
+    clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+nav>a:hover>img{
+    display: inline-block;
+    animation: var(--animationSpin);
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 15px;
+}
+nav ul li a, nav>a{
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+/* Galeria */
+body>a{
+    display: block;
+    width: 15%;
+    color: black;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 14px;
+    font-style: italic;
+    margin: 18px 20px 5px 20px;
+}
+body>a:hover{
+    animation: spin .3s ease-in infinite;
+    transition: all 300ms;
+}
+
+@keyframes spin{
+    0%{
+        transform:rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(10deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+body>a:link{
+    color:gray;
+}
+body>p{
+    width: 90%;
+    margin: 0px auto;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding:  10px;
+    border-right: 1px solid rgba(226, 226, 226, .6);
+    border-bottom: 1px solid rgba(226, 226, 226, .6);
+    border-radius: 0 0 5px 0;
+    cursor: pointer;
+}
+body>p:hover{
+    animation: shadowWalk 2s ease-out 0s infinite;
+    box-shadow: 4px 4px 1px black;
+    transition: all 500ms;
+}
+@keyframes shadowWalk {
+    0%{
+        box-shadow: 4px 4x 1px black;
+    }
+    50%{
+        box-shadow: 0px 0px 0px black;
+    }
+    100%{
+        box-shadow: 4px 4px 1px black;
+    }
+}
+/* Main */
+.container{
+    display: flex;
+    padding: 25px 30px;
+    margin: 0 auto;
+}
+.container main{
+    flex-basis: 75%;
+    flex-flow: row wrap;
+    margin-right: 15px;
+}
+.container main article{
+    box-shadow: 0px 0px 2px #444, 0px 2px 0px gray, 0px 5px 2px #cccccc;
+    margin-bottom: 25px;
+    padding: 25px 0px 25px 25px;
+    border-radius: 0px 0px 10px 10px;
+}
+.container main article h2{
+    font-family: var(--fontT);
+    font-size: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.container main article h4{
+    font-family: var(--fontF);
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: 10px;
+    
+}
+.container main article .imgLine{
+    display: flex;
+    position: relative;
+    padding: 25px ;
+}
+.container main article .imgLine img{
+    width: 25%;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-left: -280px;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+.container main article .imgLine img:first-child {
+    margin-left: 0px;
+}
+.container main article .imgLine:hover img{
+    animation: var(--animationLeft);
+}
+.container main article .imgLine:hover span{
+    animation: var(--animationSpin);
+}
+.container main article .imgLine span{
+    position: absolute;
+    font-size: 50px;
+    font-weight: bolder;
+    color:gray;
+    right:14%;
+    top: 35%;
+}
+.container main article p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-justify: distribute;
+    padding-right: 25px;
+}
+.container main article>span{
+    display: block;
+    text-align: right;
+    font-family: var(--fontT);
+    font-weight: bold;
+    margin-right: 25px;
+}
+.container aside{
+    position: sticky;
+    top: 10%;
+    right: 2%;
+    height: 400px;
+    z-index: 2;
+    flex-basis: 20%;
+    padding-top: 15px;
+    justify-content: center;
+    box-shadow: 2px 2px 1px black;
+    margin-left: 15px;
+    margin-bottom: 25px;
+    z-index: 0;
+}
+.container aside ul{
+    width: 100%;
+}
+.container aside ul li{
+    width: 100%;
+    margin: 10px 0px;
+}
+.container aside ul li a, .container aside h1{
+    display: block;
+    text-align: center;
+    font-family: var(--fontF);
+    color: black;
+    font-size: 18px;
+    padding: 20px;
+    transition: all 300ms;
+    border-radius: 15px;
+}
+
+.container aside ul li:hover a{
+    background-color: #bbbbbb;
+    color: white;
+
+}
+.container aside h1{
+    font-size: 24px;
+    font-weight: normal;
+
+}
+/* Footer */
+footer{
+    width: 100%;
+    display: flex;
+    height: 200px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+footer div{
+    flex-basis: 30%;
+    color: white;
+}
+footer .logotipo{
+    padding:20px;
+    flex-flow: row wrap;
+}
+footer .logotipo h1{
+    text-align: center;
+    font-family: var(--fontT);
+    font-size: 60px;
+}
+footer .mapa iframe{
+    width: 80%;
+    height: 100%;
+}
+footer .creditos p{
+    display: block;
+    text-align: center;
+    font-family: var(--fontF);
+    font-size: 20px;
+}
+/* ANIMACIONES */
+
+@keyframes spin {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
